@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:39:17 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/06/14 18:17:01 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/06/14 18:18:43 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,6 @@ typedef struct s_elems
 {
 	int		data;
 	int		index;
+
 }
+
