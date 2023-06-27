@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 12:14:27 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/06/27 16:17:51 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/06/27 17:09:44 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,45 @@
 
 void	check_param(int argc, char **argv)
 {
-	if (!is_num(argc, argv))
+	if (!check_argv(argv))
+		ft_error(0);
+	if (!check_int(argc, argv))
 		ft_error(0);
 	if (!duplicated(argc, argv))
 		ft_error(0);
 	if (chec
 }
 
-int	is_num(int argc, char **argv)
+int	check_argv(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 0;
+
+	while (argv[i])
+	{
+		if (ft_strlen(argv[i]) == 1 && argv[i][j] == '-')
+			return(0);
+		if (ft_strlen(argv[i]) == 1 && argv[i][j] == '+')
+	   		return(0)
+		if (argv[i][0] == '-' || argv[i] == '+')
+			j++;
+		while (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j])
+				j++;
+			else
+				return(0);
+		}	
+		j = 0;
+		i++;
+	}
+	return(1);
+}
+
+int	check_int(int argc, char **argv)
 {
 	int	i;
 	int	size;
@@ -32,16 +63,16 @@ int	is_num(int argc, char **argv)
 		size = ft_strlen(argv[i]);
 		if (size == 0 || ((size > 10 && arvg[i][0] != '-') 
 					&& (size > 10 && argv[i][0] != '+')) || size > 11)
-			ft_error(0);
+			return(0);
 		if (argv[i][0] != '-' && size == 10
 				&& ft_strncmp(argv[i], "2147483647", 10) > 0)
-			ft_error(0);
+			return(0);
 		if (argv[i][0] == '-' && size == 11
 				&& ft_strncmp(argv[i], "-2147483648", 11) > 0)
-			ft_error(0);
+			return(0);
 		if (argv[i][0] == '+' && size == 11
 				&& ft_strncmp(argv[i], "+2147483647", 11) > 0)
-			ft_error(0);
+			return(0);
 		i++;
 	}
 	return (1);
