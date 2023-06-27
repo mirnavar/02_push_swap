@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirnavar <mirnavar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 10:55:00 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/06/27 13:22:00 by mirnavar         ###   ########.fr       */
+/*   Created: 2023/06/27 11:57:27 by mirnavar          #+#    #+#             */
+/*   Updated: 2023/06/27 12:09:14 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/push_swap.h"
+#include "push_swap.h"
 
-int main(int argc, char **argv)
+void ft_error(int num)
 {
-	t_stack *a;
-	t_stack *b;
-
-	if (argc <= 1)
-		return (0);
-	if (argc == 2 && argv[1][0] == '\0')
-		ft_error(0)
-	check_param(argc, argv); /*path: src/check.c*/
-
-
+	if (num == 0)
+		write(2, "Error\n", 6);
+	else if (num == 1)
+		write(2, "Error\n", 6);
+	else if (num == 2)
+		write(2, "Error\n", 6);
+	else if (num == 3)
+		write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }
