@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 10:55:00 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/06/28 12:55:26 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/06/28 14:40:04 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int main(int argc, char **argv)
 		ft_error(0)
 	check_param(argc, argv); /*path: src/check.c*/
 	double_init(&a, &b);
-
+	
 }
