@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirnavar <mirnavar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/16 10:55:00 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/06/28 12:55:26 by mirnavar         ###   ########.fr       */
+/*   Created: 2023/06/28 12:16:11 by mirnavar          #+#    #+#             */
+/*   Updated: 2023/06/28 12:46:34 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int main(int argc, char **argv)
+int	double_init(t_stack **A, t_stack **B)
 {
-	t_stack *a;
-	t_stack *b;
+	if (stack_init(A) == 0 || stack_init(B) == 0)
+		ft_error(0);
+	return(1);
+}
 
-	if (argc <= 1)
-		return (0);
-	if (argc == 2 && argv[1][0] == '\0')
-		ft_error(0)
-	check_param(argc, argv); /*path: src/check.c*/
-	double_init(&a, &b);
-
+static int	stack_init(t_stack **stack)
+{
+	*stack = (t_stack *)ft_calloc(sizeof(t_stack), 1);
+	if (!stack)
+		return(0);
+	(*stack)->size = 0;
+	(*stack)->top = NULL;
+	(*stack)->bott = NULL;
+	return(1);
 }

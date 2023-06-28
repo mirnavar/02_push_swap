@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:39:17 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/06/16 11:49:58 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/06/28 12:55:29 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,11 @@ typedef s_stack
 
 // ----------------- FUNCTIONS ---------------- //
 // Checker: src/check.c                         //
-
+	void	check_param(int argc, char **argv);
+	int		check_argv(char **argv);
+	int		check_int(int argc, char **argv);
+	int		duplicated(int argc, char **argv);
+	int		check_order(int argc, char **argv);
 
 // Instruction Moves:                          //
 						/*  mov/swap.c  */

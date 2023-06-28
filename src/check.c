@@ -6,11 +6,11 @@
 /*   By: mirnavar <mirnavar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 12:14:27 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/06/27 17:09:44 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/06/28 12:55:31 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 void	check_param(int argc, char **argv)
 {
@@ -20,7 +20,6 @@ void	check_param(int argc, char **argv)
 		ft_error(0);
 	if (!duplicated(argc, argv))
 		ft_error(0);
-	if (chec
 }
 
 int	check_argv(char **argv)
@@ -107,3 +106,19 @@ int duplicated(int argc, char **argv)
 	return(1);
 }
 
+int check_order(int argc, char **argv)
+{
+	int i;
+	int temp1;
+	int temp2;
+
+	i = 0;
+	while (++i < argc - 1)
+	{
+		temp1 = ft_atoi(argv[i]);
+		temp2 = ft_atoi(argv[i + 1]);
+		if  (temp1 > temp2)
+			return(0);
+	}
+	return(1);
+}
