@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mirnavar <mirnavar@student.42barcel>       +#+  +:+       +#+         #
+#    By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/07 15:10:14 by mirnavar          #+#    #+#              #
-#    Updated: 2023/06/14 16:35:56 by mirnavar         ###   ########.fr        #
+#    Updated: 2023/07/18 14:54:27 by mirnavar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,22 +21,12 @@ CFLAGS		= -Wall -Werror -Wextra -g
 # --------------- LIBRARIES ------------------ #
 
 PSW_HEADER	= inc/push_swap.h
-LIBFT		= lib/libft.a
-LIBPF		= lib/ft_printf.a
-LIB			= lib/
+LIBFT		= 00_libft/libft.a
+LIB			= 00_libft/
 
 # ---------------- SOURCES ------------------- #
 
-SRC			= src/init_stack.c		\
-			  src/check.c			\
-			  src/mov/swap.c		\
-			  src/mov/push.c		\
-			  src/mov/rotate.c		\
-			  src/mov/rev_rotate.c	\
-			  src/sort/3_to_5.c		\
-			  src/sort/sorted.c		\
-			  src/sort/others.c		\
-			  src/sort/utils.c		
+SRC			= src/main.c
 INC			= -I ./inc
 
 # --------------- DIRECTORIES --------------- #
@@ -56,7 +46,7 @@ $(OBJ_DIR)%.o: %.c $(MKFL)
 			@mkdir -p $(dir $@)
 			$(CC) $(CFLAGS) -MMD -c $< -o $@ $(INC)
 
-$(NAME):	$(OBJ) $(LIBFT) $(LIBPF)
+$(NAME):	$(OBJ)
 			@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(LIBPF) -o $(NAME)
 			@echo "Push swap correctly compiled"
 

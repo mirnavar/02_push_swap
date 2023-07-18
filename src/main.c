@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 16:39:17 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/07/18 14:33:43 by mirnavar         ###   ########.fr       */
+/*   Created: 2023/07/18 14:25:49 by mirnavar          #+#    #+#             */
+/*   Updated: 2023/07/18 14:26:55 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../inc/push_swap.h"
+#include <stdio.h>
 
-# include "../00_libft/libft.h"
-# include "../00_libft/ft_printf.h"
-# include <limits.h>
-
-// ------------------ STRUCTURES -------------- //
-
-#endif
+int main(void)
+{
+    return (printf("hola\n"));
+}
