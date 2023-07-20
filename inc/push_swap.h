@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:39:17 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/07/18 17:56:43 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:46:28 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,8 @@ int doble_init(t_stack **a, t_stack **b);
 int push_stack(t_stack *stack, int data, int index);
 int pop_stack(t_stack *stack);
 int push(t_stack *src, t_stack *dst, int type_push);
+int check_argumentos(int argc, char **argv);
+int check_argv(char **argv);
+int check_lim(int argc, char **argv);
+int check_duplicate(int argc, char **argv);
 #endif

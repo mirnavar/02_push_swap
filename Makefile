@@ -6,7 +6,7 @@
 #    By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/07 15:10:14 by mirnavar          #+#    #+#              #
-#    Updated: 2023/07/18 17:51:30 by mirnavar         ###   ########.fr        #
+#    Updated: 2023/07/20 12:47:49 by mirnavar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ LIB			= 00_libft/
 
 # ---------------- SOURCES ------------------- #
 
-SRC			= src/instructions/push.c src/free.c \
-			src/init.c src/main.c
+SRC			= src/instructions/push.c src/check.c \
+			src/free.c src/init.c src/main.c
 INC			= -I ./inc
 
 # --------------- DIRECTORIES --------------- #

@@ -6,17 +6,17 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 14:25:49 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/07/18 19:51:28 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/07/20 16:40:12 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void print_stack(t_node *node)
+void print_stack(t_stack *stack)
 {
     t_node *tmp;
 
-    tmp = node;
+    tmp = stack->top;
     while (tmp)
     {
         ft_printf("the data %d\nthe index %d\n", tmp->data, tmp->index);
@@ -24,111 +24,53 @@ void print_stack(t_node *node)
     }
 }
 
-int check_argv(char **argv)
+int swap(t_stack *stack, int type_swap)
 {
-    int i;
-    int j;
+    t_node  *tmp1;
+    t_node  *tmp2;
 
-    i = 1;
-    j = 0;
-    while (argv[i])
-    {
-        if (ft_strlen(argv[i]) == 1 && argv[i][j] == '-')
-            return (ERROR);
-        if (ft_strlen(argv[i]) == 1 && argv[i][j] == '+')
-            return (ERROR);
-        if (argv[i][0] == '-' || argv[i][0] == '+')
-            j++;
-        while (argv[i][j])
-        {
-            if (ft_isdigit(argv[i][j]))
-                j++;
-            else
-                return (ERROR);
-        }
-        j = 0;
-        i++;
-    }
-    return (SUCCESS);
-}
-
-int check_lim(int argc, char **argv)
-{
-    int i;
-    int size;
-
-    i = 1;
-    while (i < argc)
-    {
-        size = ft_strlen(argv[i]);
-        if (size == 0 || ((size > 10 && argv[i][0] != '-')
-            && (size >10 && argv[i][0] != '+')) || size > 11)
-            return (ERROR);
-        if (argv[i][0] != '-' && size == 10 
-            && ft_strncmp(argv[i], "2147483647", 10) > 0)
-            return (ERROR);
-        if (argv[i][0] == '-' && size == 11
-            && ft_strncmp(argv[i], "-2147483648", 11) > 0)
-            return (ERROR);
-        if (argv[i][0] == '+' && size == 11
-            && ft_strncmp(argv[i], "+2147483647", 11) > 0)
-            return (ERROR);
-        i++;
-    }
-    return (SUCCESS);
-}
-
-int check_duplicate(int argc, char **argv)
-{
-    int *array;
-    int num;
-    int next;
-
-    array = ft_calloc(sizeof(int), argc - 1);
-    if (!array)
+    if (stack->size < 2) //REALMENTE NECESARIO SI EN TWO_SWAP ya PONGO LA CONDICION < 2 ERROR? 
         return (ERROR);
-    num = 0;
-    next = 1;
-    while (next < argc)
-        array[num++] = ft_atoi(argv[next++]);
-    num = 0;
-    while (num < argc)
-    {
-        next = num + 1;
-        while (next < argc - 1)
-        {
-            if (array[num] == array[next])
-            {
-                free(array);
-                return (ERROR);
-            }
-            next++;
-        }
-        num++;
-    }
-    free(array);
-    return (SUCCESS);
-}
-
-int check_argumentos(int argc, char **argv)
-{
-    if (argc >= 2)
-    {
-        if (check_argv(argv) == ERROR || check_lim(argc, argv) == ERROR
-        || check_duplicate(argc, argv) == ERROR)
-        {
-            write(2, "Error\n", 6);
-            exit (ERROR);
-        }
-    }
-    else
-        exit(ERROR);
+    tmp1 = stack->top;
+    tmp2 = stack->top->next;
+    stack->top = tmp2;
+    tmp1->next = tmp2->next;
+    stack->top->next = tmp1;
+    stack->top->prev = NULL;
+    tmp1->prev = stack->top;
+    if (stack->size == 2)
+        stack->bot = tmp1;
+    if (stack->size > 2)
+        stack->top->next->next->prev = tmp1;
+    if (type_swap == STACKA)
+        ft_printf("sa\n");
+    if (type_swap == STACKB)
+        ft_printf("sb\n");
     return (SUCCESS);
 }
 
 int main(int argc, char **argv)
 {
+    t_stack *a;
+    t_stack *b;
     if (!check_argumentos(argc, argv))
         ft_printf("Muy bien mireita\n");
+    doble_init(&a, &b);
+    int i = 8;
+    int j = 1;
+    while (i <= 10)
+        push_stack(a, i++, j++);
+    write(2, "stacka1\n", 8);
+    print_stack(a);
+    //pop_stack(a);
+    push(a, b, STACKB);
+    write(2, "stacka2\n", 8);
+    print_stack(a);
+    write(2, "stackb\n", 7);
+    print_stack(b);
+    swap(a, STACKA);
+    print_stack(a);
+    //print_stack(a->top->next);
+    doble_free(a, b);
     return (SUCCESS);
 }
