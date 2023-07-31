@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:39:17 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/07/20 12:46:28 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/07/31 12:16:58 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,6 @@ int check_argumentos(int argc, char **argv);
 int check_argv(char **argv);
 int check_lim(int argc, char **argv);
 int check_duplicate(int argc, char **argv);
+int swap(t_stack *stack, int type_swap);
+int doble_swap(t_stack *a, t_stack *b);
 #endif
