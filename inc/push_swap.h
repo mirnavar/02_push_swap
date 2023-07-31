@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:39:17 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/07/31 15:47:20 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/07/31 16:39:22 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,6 @@ int		swap(t_stack *stack, int type_swap);
 int		doble_swap(t_stack *a, t_stack *b);
 int		rotate(t_stack *stack, int type_rotate);
 int		doble_rotate(t_stack *a, t_stack *b);
+int		reverse_rotate(t_stack *stack, int type_reverse);
+int		doble_reverse_rotate(t_stack *a, t_stack *b);
 #endif
