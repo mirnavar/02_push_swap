@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:39:17 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 19:24:45 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/01 20:13:58 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ typedef struct s_node
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
-
 
 typedef struct s_stack
 {
@@ -70,5 +69,5 @@ int		size_four(t_stack *a, t_stack *b);
 int		size_five(t_stack *a, t_stack *b);
 void	sort_big(t_stack *a, t_stack *b);
 void	sort_digits(t_stack *a, t_stack *b, int bit);
-void 	print_stack(t_stack *stack);
+void	print_stack(t_stack *stack);
 #endif

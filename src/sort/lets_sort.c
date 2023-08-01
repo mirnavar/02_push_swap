@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 15:21:11 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 20:04:01 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/01 20:42:42 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ int	size_five(t_stack *a, t_stack *b)
 void	sort_big(t_stack *a, t_stack *b)
 {
 	int	size;
-	int max_num;
+	int	max_num;
 	int	max_bits;
 	int	i;
 
 	size = a->size;
-	max_num = size - 1; //??
+	max_num = size - 1; //?
 	max_bits = 0;
 	while (max_num)
 	{
@@ -113,7 +113,7 @@ void	sort_digits(t_stack *a, t_stack *b, int bit)
 	while (i < size)
 	{
 		num = a->top->index;
-		if ((num >> bit) & 1)  //si == 1 -> rotate (se queda en a)
+		if ((num >> bit) & 1) //si == 1 -> rotate (se queda en a)
 			rotate(a, STACKA);
 		else 
 			push(a, b, STACKB); // si == 0 -> push de a a b

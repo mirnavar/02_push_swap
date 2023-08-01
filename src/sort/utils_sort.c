@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 17:36:10 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 19:53:47 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/01 20:44:32 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	find_num(t_stack *stack, int ind)
 	while (node)
 	{
 		if (node->index == ind)
-			break;
+			break ;
 		node = node->next;
 		pos++;
 	}

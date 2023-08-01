@@ -6,33 +6,33 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 14:25:49 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 19:47:27 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/01 20:41:03 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-void print_stack(t_stack *stack)
+void	print_stack(t_stack *stack)
 {
-    t_node *tmp;
+	t_node	*tmp;
 
-    tmp = stack->top;
-    while (tmp)
-    {
-        ft_printf("the data %d\nthe index %d\n", tmp->data, tmp->index);
-        ft_printf("the actual %p\n the next %p\nthe prev %p\n", tmp, tmp->next, tmp->prev);
-        tmp = tmp->next;
-    }
+	tmp = stack->top;
+	while (tmp)
+	{
+		ft_printf("the data %d\nthe index %d\n", tmp->data, tmp->index);
+		ft_printf("actual %p\n next %p\n prev %p\n", tmp, tmp->next, tmp->prev);
+		tmp = tmp->next;
+	}
 }
 
 int	setup_stack(int argc, char **argv, t_stack *stack)
 {
-    int i;
+	int	i;
 
-    i = argc - 1;
-    while (i)
-        push_stack(stack, ft_atoi(argv[i--]), 0);
-    return (SUCCESS);
+	i = argc - 1;
+	while (i)
+		push_stack(stack, ft_atoi(argv[i--]), 0);
+	return (SUCCESS);
 }
 
 void	indexer(t_stack *stack)
@@ -90,23 +90,23 @@ int	stack_size(t_stack *a, t_stack *b)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_stack *a;
-    t_stack *b;
-    check_argumentos(argc, argv);
-    doble_init(&a, &b);
+	t_stack	*a;
+	t_stack	*b;
+
+	check_argumentos(argc, argv);
+	doble_init(&a, &b);
 	setup_stack(argc, argv, a);
 	indexer(a);
-	//ft_printf("%d\n", ((4>>2)&1));
 	if (stack_sorted(a, ASC) != 0)
 	{
 		doble_free(a, b);
 		return (SUCCESS);
 	}
 	stack_size(a, b);
-    doble_free(a, b);
-    return (SUCCESS);
+	doble_free(a, b);
+	return (SUCCESS);
 }
 
 //int main(int argc, char **argv)
@@ -159,6 +159,7 @@ int main(int argc, char **argv)
 //	write(1, "SEGUIMOS!\n", 10);
 //	stack_size(a, b);
 //	print_stack(a);
+//ft_printf("%d\n", ((4>>2)&1));
 //    doble_free(a, b);
 //    return (SUCCESS);
 //}
