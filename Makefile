@@ -6,7 +6,7 @@
 #    By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/07 15:10:14 by mirnavar          #+#    #+#              #
-#    Updated: 2023/07/31 17:51:05 by mirnavar         ###   ########.fr        #
+#    Updated: 2023/08/01 12:48:32 by mirnavar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,9 @@ LIB			= 00_libft/
 # ---------------- SOURCES ------------------- #
 
 SRC			= src/instructions/push.c src/instructions/swap.c \
-			src/instructions/reverse_rotate.c src/instructions/rotate.c \
-			 src/check.c src/free.c src/init.c src/main.c
+			 src/instructions/reverse_rotate.c src/instructions/rotate.c \
+			 src/check.c src/free.c src/init.c src/main.c \
+			 src/sort/sorted.c
 INC			= -I ./inc
 
 # --------------- DIRECTORIES --------------- #

@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:39:17 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 12:22:17 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/01 12:44:52 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ int		reverse_rotate(t_stack *stack, int type_reverse);
 int		doble_reverse_rotate(t_stack *a, t_stack *b);
 int		setup_stack(int argc, char **argv, t_stack *stack);
 void	indexer(t_stack *stack);
+int		stack_sorted(t_stack *stack, int type);
 #endif

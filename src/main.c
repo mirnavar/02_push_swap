@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 14:25:49 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 12:42:39 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/01 12:47:49 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,33 +58,6 @@ void	indexer(t_stack *stack)
 		current->index = idx1;
 		current = current->next;
 	}
-}
-
-int	stack_sorted(t_stack *stack, int type)
-{
-	t_node	*node;
-
-	if (type == ASC)
-	{
-		node = stack->top;
-		while (node && node->next)
-		{
-			if (node->data > node->next->data)
-				return (0);
-			node = node->next;
-		}
-	}
-	if (type == DESC)
-	{
-		node = stack->bot;
-		while (node && node->prev)
-		{
-			if (node->data < node->prev->data)
-				return (0);
-			node = node->prev;
-		}
-	}
-	return (1);
 }
 
 int main(int argc, char **argv)
