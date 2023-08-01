@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:39:17 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/07/31 16:39:22 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/01 12:22:17 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,12 @@
 
 // ------------------ STRUCTURES -------------- //
 
-# define ERROR -1
-# define SUCCESS 0
-# define STACKA 1
-# define STACKB 2
+# define ERROR 		-1
+# define SUCCESS 	0
+# define STACKA 	1
+# define STACKB 	2
+# define ASC 		1
+# define DESC		2
 
 typedef struct s_node
 {
@@ -32,6 +34,7 @@ typedef struct s_node
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
+
 
 typedef struct s_stack
 {
@@ -57,4 +60,6 @@ int		rotate(t_stack *stack, int type_rotate);
 int		doble_rotate(t_stack *a, t_stack *b);
 int		reverse_rotate(t_stack *stack, int type_reverse);
 int		doble_reverse_rotate(t_stack *a, t_stack *b);
+int		setup_stack(int argc, char **argv, t_stack *stack);
+void	indexer(t_stack *stack);
 #endif

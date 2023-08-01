@@ -6,13 +6,13 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 16:32:42 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/07/31 16:35:57 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/01 10:30:45 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int reverse_rotate(t_stack *stack, int type_reverse)
+int	reverse_rotate(t_stack *stack, int type_reverse)
 {
     t_node  *tmp1;
     t_node  *tmp2;
@@ -26,6 +26,7 @@ int reverse_rotate(t_stack *stack, int type_reverse)
     stack->top = tmp3;
     stack->top->prev = NULL;
     stack->top->next = tmp1;
+    stack->top->next->prev = tmp3; //
     //tmp3->next = tmp1;
     stack->bot = tmp2;
     stack->bot->next = NULL;

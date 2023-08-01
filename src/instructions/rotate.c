@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 15:04:23 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/07/31 15:39:41 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/01 10:04:13 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int rotate(t_stack *stack, int type_rotate)
     stack->top = tmp2;
     stack->top->prev = NULL;
     stack->top->next = tmp2->next;
-    stack->bot->prev = tmp3;
     tmp3->next = tmp1;
     stack->bot = tmp1;
+    stack->bot->prev = tmp3;
     stack->bot->next = NULL;
     if (type_rotate == STACKA)
         ft_printf("ra\n");
@@ -46,4 +46,3 @@ int doble_rotate(t_stack *a, t_stack *b)
     ft_printf("rr\n");
     return (SUCCESS);
 }
-
