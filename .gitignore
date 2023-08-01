@@ -5,3 +5,5 @@
 *.vscode
 obj
 push_swap
+test
+42*

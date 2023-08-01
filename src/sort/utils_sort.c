@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorted.c                                           :+:      :+:    :+:   */
+/*   utils_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/01 12:47:13 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 17:10:28 by mirnavar         ###   ########.fr       */
+/*   Created: 2023/08/01 17:36:10 by mirnavar          #+#    #+#             */
+/*   Updated: 2023/08/01 19:53:47 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int	stack_sorted(t_stack *stack, int type)
+int	find_num(t_stack *stack, int ind)
 {
 	t_node	*node;
+	int		pos;
 
-	if (type == ASC)
+	pos = 0;
+	node = stack->top;
+	while (node)
 	{
-		node = stack->top;
-		while (node && node->next)
-		{
-			if (node->data > node->next->data)
-				return (0);
-			node = node->next;
-		}
+		if (node->index == ind)
+			break;
+		node = node->next;
+		pos++;
 	}
-	if (type == DESC)
-	{
-		node = stack->bot;
-		while (node && node->prev)
-		{
-			if (node->data < node->prev->data)
-				return (0);
-			node = node->prev;
-		}
-	}
-	return (1);
+	return (pos);
 }
-
