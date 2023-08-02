@@ -6,7 +6,7 @@
 #    By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/07 15:10:14 by mirnavar          #+#    #+#              #
-#    Updated: 2023/08/02 11:00:52 by mirnavar         ###   ########.fr        #
+#    Updated: 2023/08/02 12:29:54 by mirnavar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ SRC			= src/instructions/push.c src/instructions/swap.c \
 			 src/instructions/reverse_rotate.c src/instructions/rotate.c \
 			 src/check.c src/free.c src/init.c src/main.c \
 			 src/sort/lets_sort.c src/sort/sorted.c \
-			 src/sort/utils_sort.c 
+			 src/sort/utils_sort.c src/utils.c
 INC			= -I ./inc
 
 # --------------- DIRECTORIES --------------- #
