@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 14:25:49 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 20:41:03 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/02 10:22:08 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,37 +59,6 @@ void	indexer(t_stack *stack)
 	}
 }
 
-int	stack_size(t_stack *a, t_stack *b)
-{
-	(void)b;
-	if (a->size == 2)
-	{
-		swap(a, STACKA);
-		return (SUCCESS);
-	}
-	if (a->size == 3)
-	{
-		size_three(a);
-		return (SUCCESS);
-	}
-	if (a->size == 4)
-	{
-		size_four(a, b);
-		return (SUCCESS);
-	}
-	if (a->size == 5)
-	{
-		size_five(a, b);
-		return (SUCCESS);
-	}
-	if (a->size > 5)
-	{
-		sort_big(a, b);
-		return (SUCCESS);
-	}
-	return (0);
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -104,7 +73,8 @@ int	main(int argc, char **argv)
 		doble_free(a, b);
 		return (SUCCESS);
 	}
-	stack_size(a, b);
+	stack_size_small(a, b);
+	stack_size_big(a, b);
 	doble_free(a, b);
 	return (SUCCESS);
 }

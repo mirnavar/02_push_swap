@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 11:02:22 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 20:23:37 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/02 10:09:02 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,17 @@ int	check_lim(int argc, char **argv)
 	return (SUCCESS);
 }
 
+void	ft_array(int argc, char **argv, int *array)
+{
+	int	num;
+	int	next;
+
+	num = 0;
+	next = 1;
+	while (next < argc)
+		array[num++] = ft_atoi(argv[next++]);
+}
+
 int	check_duplicate(int argc, char **argv)
 {
 	int	*array;
@@ -75,22 +86,18 @@ int	check_duplicate(int argc, char **argv)
 	array = ft_calloc(sizeof(int), argc - 1);
 	if (!array)
 		return (ERROR);
-	num = 0;
-	next = 1;
-	while (next < argc)
-		array[num++] = ft_atoi(argv[next++]);
+	ft_array(argc, argv, array);
 	num = 0;
 	while (num < argc)
 	{
 		next = num + 1;
 		while (next < argc - 1)
 		{
-			if (array[num] == array[next])
+			if (array[num] == array[next++])
 			{
 				free(array);
 				return (ERROR);
 			}
-			next++;
 		}
 		num++;
 	}

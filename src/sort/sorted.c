@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 12:47:13 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 20:43:24 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/02 10:22:56 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,39 @@ int	stack_sorted(t_stack *stack, int type)
 		}
 	}
 	return (1);
+}
+
+int	stack_size_small(t_stack *a, t_stack *b)
+{
+	if (a->size == 2)
+	{
+		swap(a, STACKA);
+		return (SUCCESS);
+	}
+	if (a->size == 3)
+	{
+		size_three(a);
+		return (SUCCESS);
+	}
+	if (a->size == 4)
+	{
+		size_four(a, b);
+		return (SUCCESS);
+	}
+	if (a->size == 5)
+	{
+		size_five(a, b);
+		return (SUCCESS);
+	}
+	return (0);
+}
+
+int	stack_size_big(t_stack *a, t_stack *b)
+{
+	if (a->size > 5)
+	{
+		sort_big(a, b);
+		return (SUCCESS);
+	}
+	return (0);
 }
