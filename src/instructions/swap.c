@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 10:29:36 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/01 20:47:01 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/02 12:03:09 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	swap(t_stack *stack, int type_swap)
 	t_node	*tmp1;
 	t_node	*tmp2;
 
-	if (stack->size < 2) //REALMENTE NECESARIO SI EN TWO_SWAP ya PONGO LA CONDICION < 2 ERROR? 
+	if (stack->size < 2)
 		return (ERROR);
 	tmp1 = stack->top;
 	tmp2 = stack->top->next;

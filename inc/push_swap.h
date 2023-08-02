@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 16:39:17 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/02 10:21:28 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/02 11:07:07 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <limits.h>
 # include <stdlib.h>
 
-// ------------------ STRUCTURES -------------- //
+// ------------------ MACROS -------------- //
 
 # define ERROR 		-1
 # define SUCCESS 	0
@@ -26,6 +26,8 @@
 # define STACKB 	2
 # define ASC 		1
 # define DESC		2
+
+// ------------------ STRUCTURES -------------- //
 
 typedef struct s_node
 {

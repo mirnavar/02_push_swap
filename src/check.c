@@ -6,7 +6,7 @@
 /*   By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 11:02:22 by mirnavar          #+#    #+#             */
-/*   Updated: 2023/08/02 10:09:02 by mirnavar         ###   ########.fr       */
+/*   Updated: 2023/08/02 11:47:13 by mirnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,6 @@ int	check_argumentos(int argc, char **argv)
 		}
 	}
 	else
-		exit(ERROR);
+		exit (ERROR);
 	return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 #    By: mirnavar <mirnavar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/07 15:10:14 by mirnavar          #+#    #+#              #
-#    Updated: 2023/08/01 17:37:41 by mirnavar         ###   ########.fr        #
+#    Updated: 2023/08/02 11:00:52 by mirnavar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ $(OBJ_DIR)%.o: %.c $(MKFL)
 			$(CC) $(CFLAGS) -MMD -c $< -o $@ $(INC)
 
 $(NAME):	$(OBJ)
-			@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) $(LIBPF) -o $(NAME)
+			@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 			@echo "Push swap correctly compiled"
 
 -include $(DEP)
